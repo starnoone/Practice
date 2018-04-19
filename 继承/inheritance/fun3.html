@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3.组合方式继承</title>
+</head>
+<body>
+<script type="text/javascript">
+function Animal(){
+	this.type = '动物';
+}
+Animal.prototype.spark = function(words){
+	console.log(words);
+}
+function Dog(name){
+	Animal.call(this);
+	this.name = name;
+}
+Dog.prototype = new Animal;
+Dog.prototype.comstructor = Dog;
+var xh = new Dog('小黄');
+console.log(xh.type);
+xh.spark('汪汪汪');
+</script>
+</body>
+</html>

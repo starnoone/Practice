@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4.原型式继承</title>
+</head>
+<body>
+<script type="text/javascript">
+function object(o){
+	function F(){};
+	F.prototype = o;
+	F.prototype.comstructor = F;
+	return new F();
+}
+//需要继承的公共数据(属性+方法)
+var o = {
+	type:'动物',
+	name:'小黄',
+	spark:function(){
+		console.log('汪汪汪');
+	}
+}
+var xh = object(o);
+xh.spark();
+</script>
+</body>
+</html>

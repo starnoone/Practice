@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="main" @childEvt = ''>
+	<h1>{{title}}</h1>
+	<child></child>
+</div>
+<template id='child'>
+	<input v-model = 'msg'>
+	<button @click = 'addMsg'>addMsg</button>
+</template>
+<script type="text/javascript" src='lab/vue.js'></script>
+<script type="text/javascript" src='app/components.js'></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>递归</title>
+</head>
+<body>
+<script type="text/javascript">
+//递归实现 1+2+....+n
+var rst = 0;
+(function(n){
+	//出口
+	if(n<1){
+		return 0
+	}
+	//规律
+	return rst = n + arguments.callee(n - 1);
+}(4));
+console.log(rst);
+
+
+/*//分类数据
+var categories = [{
+		id:'1',
+		title:'食品',
+		pid:'0'
+	},{
+		id:'101',
+		title:'肉',
+		pid:'1'
+	},{
+		id:'205',
+		title:'丝瓜',
+		pid:'102'
+	},{
+		id:'201',
+		title:'鸡肉',
+		pid:'101'
+	},{
+		id:'202',
+		title:'鸭肉',
+		pid:'101'
+	},{
+		id:'301',
+		title:'鲫鱼',
+		pid:'203'
+	},{
+		id:'303',
+		title:'大白菜',
+		pid:'204'
+	},{
+		id:'102',
+		title:'蔬菜',
+		pid:'1'
+	},{
+		id:'302',
+		title:'小白菜',
+		pid:'204'
+	},{
+		id:'203',
+		title:'鱼肉',
+		pid:'101'
+	},{
+		id:'204',
+		title:'白菜',
+		pid:'102'
+	}];
+
+var category = [];
+//递归调用整理数据结构
+(function classify(cate,pid='0',level=0){
+	//遍历数据
+	cate.map(function(item,k){
+		if(item.pid === pid){
+			category.push(item);
+			item.level = level;
+			classify(cate,item.id,level+1);
+		}
+	})
+}(categories));
+
+//将整理完结构数据中的title渲染到页面中
+var cataHtml = '';
+category.map(function(val,key){
+	var level = getlevel(val.level);
+	cataHtml += '<p>'+level+val.title+'</p>';
+});
+document.write(cataHtml);
+
+//生成等级前缀
+function getlevel(level,flag='+'){
+	level *= 2;
+	var temp = '';
+	//循环输出level*2次flag
+	for(var i=1;i<=level;i++){
+		temp += flag;
+	}
+	return temp;
+}*/
+</script>
+</body>
+</html>

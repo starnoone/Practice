@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	input{
+		outline: none;
+		height: 34px;
+		width: 300px;
+		padding: 0 8px;
+	}
+	span{
+		display: inline-block;
+		width: 60px;
+	}
+	</style>
+</head>
+<body>
+<div id="main">
+<p><span>title:</span><input v-model='title'></p>
+<p><span>id:</span><input v-model='id'></p>
+<p><span>pid:</span><input v-model='pid'></p>
+<button @click='addCate'>get</button>
+	<ul v-html="cateHtml"></ul>
+</div>
+<script type="text/javascript" src='lab/vue.js'></script>
+<script type="text/javascript" src='app/index.js'></script>
+</body>
+</html>

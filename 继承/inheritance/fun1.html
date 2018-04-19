@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1.原型链方式继承</title>
+</head>
+<body>
+<script type="text/javascript">
+function Animal(){
+	this.type = '动物'
+}
+function Dog(name){
+	this.name = name;
+}
+Dog.prototype = new Animal;
+var xh = new Dog('小黄');
+console.log(xh.type);
+</script>
+</body>
+</html>

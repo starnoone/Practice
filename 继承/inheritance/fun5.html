@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4.原型式继承</title>
+</head>
+<body>
+<script type="text/javascript">
+function object(o){
+	function F(){};
+	F.prototype = o;
+	F.prototype.comstructor = F;
+	return new F();
+}
+
+//强化方法函数(增加方法)
+function createAnother(o){
+	var clone = object(o);
+	clone.run = function(){
+		console.log('跑');
+	}
+	return clone
+}
+
+//需要继承的公共数据(属性)
+var o = {
+	type:'动物',
+	name:'小黄'
+}
+var xh = createAnother(o);
+xh.run();
+</script>
+</body>
+</html>

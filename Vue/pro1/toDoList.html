@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+	}
+	body{background: #eee}
+	ul{
+		list-style: none;
+	}
+	#main{
+		background: #eee;
+		width:100%;
+		display: flex;
+	}
+	#main .write{
+		width:300px;
+	}
+	#main .list{
+		background: #999;
+		flex:1;
+	}
+	#main .list ul{
+		margin:10px;
+	}
+	#main .list ul li{
+		font-size:14px;
+		border-bottom: 1px solid #444;
+	}
+	#main .list ul li h2{
+		font-size:16px;
+	}
+	#main .write input{
+		border: none;
+		height:28px;
+		width:180px;
+		display:block;
+		margin: 10px auto;
+		outline: none;
+		padding:0 8px;
+	}
+	#main .write textarea{
+		height:100px;
+		width: 180px;
+		display:block;
+		margin: 10px auto;
+		outline: none;
+		padding:3px 8px;
+
+	}
+	#main .write button{
+		border: 1px solid #999;
+		height:28px;
+		width:180px;
+		display:block;
+		margin: 10px auto;
+		outline: none;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div id="main">
+	<div class="write">
+		<input type="text" name="" v-model='tit'>
+		<textarea v-model='val'></textarea>
+		<button @click = 'chage'>保存</button>
+	</div>
+	<div class="list">
+		<ul>
+			<li v-for = 'i in list'><h2>{{i.title}}</h2><p>{{i.des}}</p></li>
+			<!-- <li v-for = 'i in title'>{{i}}</li> -->
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src='lab/vue.js'></script>
+<script type="text/javascript" src='app/toDoList.js'></script>
+</body>
+</html>

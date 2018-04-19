@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6.寄生组合式继承</title>
+</head>
+<body>
+<script type="text/javascript">
+//将F的prototype指向为pro(期待为超类的prototype);
+function obj(pro){
+	function F(){};
+	F.prototype = pro;
+	return new F();
+}
+//将子类的prototype指向为new F();
+function inheritPrototype(subType,superType){
+	subType.prototype = obj(superType.prototype);
+	subType.prototype.comstructor = subType;
+}
+
+function Animal(){
+	this.type = '动物';
+}
+Animal.prototype.spark = function(words){
+	console.log(words);
+}
+function Dog(name){
+	Animal.call(this);
+	this.name = name;
+}
+
+inheritPrototype(Dog,Animal);
+var xh = new Dog();
+xh.spark('汪汪汪');
+</script>
+</body>
+</html>

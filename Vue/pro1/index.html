@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="main" @childMsg='setMsg'>
+	<h1>{{title}}</h1>
+	<my-footer></my-footer>
+</div>
+<template id="child">
+	<div>{{msg}}</div>
+	<input v-model = 'msg'>
+	<button @click = 'getChild'>chage</button>
+</template>
+<script type="text/javascript" src='lab/vue.js'></script>
+<script type="text/javascript" src='app/index.js'></script>
+</body>
+</html>

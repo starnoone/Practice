@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2.借用构造函数方式继承</title>
+</head>
+<body>
+<script type="text/javascript">
+function Animal(){
+	this.type = '动物';
+}
+function Dog(name){
+	Animal.call(this);
+	this.name = name;
+}
+var xh = new Dog('小黄');
+console.log(xh.type);
+</script>
+</body>
+</html>

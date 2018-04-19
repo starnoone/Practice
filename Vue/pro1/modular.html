@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	a{
+		text-decoration: none;
+		color:#333;
+	}
+	#main{
+		width: 400px;
+		margin:0 auto;
+		background: #eee;
+		margin-top:20px;
+	}
+	#main .nav{
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		display: flex;
+		border-bottom: 1px solid #999;
+	}
+	#main .nav a{
+		display: block;
+		width: 100%;
+	}
+	#main .nav a.on{
+		color:red;
+	}
+	#main .content .item{
+		height:200px;
+		display: none;
+	}
+	#main .content .item.on{
+		display: block;
+		background: #ccc;
+	}
+	</style>
+</head>
+<body>
+<div id="main">
+	<div class="nav">
+		<a href="javascript:void(0)" index='0' class="on">首页</a>
+		<a href="javascript:void(0)" index='1'>评价</a>
+		<a href="javascript:void(0)" index='2'>商家</a>
+	</div>
+	<div class="content">
+		<div class="item on">首页</div>
+		<div class="item">评价</div>
+		<div class="item">商家</div>
+	</div>
+</div>
+<script type="text/javascript" src='lab/jquery-3.2.1.min.js'></script>
+<script type="text/javascript" src='app/modular.js'></script>
+</body>
+</html>
