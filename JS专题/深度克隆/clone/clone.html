@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据深度克隆</title>
+</head>
+<body>
+<script type="text/javascript">
+var data = [1,2,3,['a','b'],{type:'arr'}];
+var dataClone = clone(data);
+dataClone[3][0] = 'p';
+console.log(data);
+console.log(dataClone);
+function clone(data){
+	var type = Object.prototype.toString.call(data).slice(8, -1);
+	var temp;
+	if(type === 'Array'){
+		temp = [];
+		data.map(function(val,i){
+			temp.push(clone(val));
+		})
+		return temp;
+	}else if(type === 'Object'){
+		temp = {};
+		for(var key in data){
+			temp[key] = clone(data[key]);
+		}
+		return temp;
+	}else{
+		return data;
+	}
+}
+</script>
+</body>
+</html>
